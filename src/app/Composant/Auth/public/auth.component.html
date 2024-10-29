@@ -1,0 +1,35 @@
+<div class="form-container">
+  <div class="form-box">
+    <h2>{{ isLoginMode ? 'Connexion' : 'Inscription' }}</h2>
+    <form [formGroup]="isLoginMode ? loginForm : registerForm" (ngSubmit)="onSubmit()">
+      <div *ngIf="!isLoginMode" class="mb-3">
+        <label for="name" class="form-label">Nom Complet</label>
+        <input type="text" formControlName="name" class="form-control" placeholder="Entrez votre nom complet">
+      </div>
+      <div *ngIf="!isLoginMode" class="mb-3">
+        <label for="prenom" class="form-label">Prénom</label>
+        <input type="text" formControlName="prenom" class="form-control" placeholder="Entrez votre prénom">
+      </div>
+      <div class="mb-3">
+        <label for="email" class="form-label">Adresse Email</label>
+        <input type="email" formControlName="email" class="form-control" placeholder="Entrez votre email">
+      </div>
+      <div class="mb-3">
+        <label for="password" class="form-label">Mot de Passe</label>
+        <input type="password" formControlName="password" class="form-control" placeholder="Entrez votre mot de passe">
+      </div>
+      <div *ngIf="!isLoginMode" class="mb-3">
+        <label for="password_confirmation" class="form-label">Confirmer le Mot de Passe</label>
+        <input type="password" formControlName="password_confirmation" class="form-control" placeholder="Confirmez votre mot de passe">
+      </div>
+      <button type="submit" [disabled]="isLoginMode ? loginForm.invalid : registerForm.invalid">
+        {{ isLoginMode ? 'Se Connecter' : 'S\'inscrire' }}
+      </button>
+      <div class="switch-link">
+        <p (click)="switchMode()">
+          {{ isLoginMode ? 'Pas encore inscrit ? Créer un compte' : 'Déjà inscrit ? Se connecter' }}
+        </p>
+      </div>
+    </form>
+  </div>
+</div>

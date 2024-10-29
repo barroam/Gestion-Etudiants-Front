@@ -1,1 +1,5 @@
 /* You can add global styles to this file, and also import other style files */
+
+body{font-family: 'Roboto';}
+h1,h2,h3,h4{font-family: 'Merriweather';}
+p{font-family: 'Roboto';}
