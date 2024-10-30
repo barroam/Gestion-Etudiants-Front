@@ -1,3 +1,71 @@
+<div class="content">
+
+  <div class="mt-4">
+    <h1 class="text-center ">Suivi des Évaluations des Élèves</h1>
+
+    <div class="row mb-4">
+      <div class="col-lg-8">
+        <div class="card shadow border-0">
+          <div class="card-body">
+            <h5 class="card-title text-center">Performance Globale</h5>
+            <canvas id="combinedChart" style="max-height: 400px;"></canvas>
+          </div>
+        </div>
+      </div>
+
+      <div class="col-lg-4">
+        <div class="card shadow border-0 mb-4">
+          <div class="card-header bg-primary text-white">
+            <h5>Informations sur les Élèves</h5>
+          </div>
+          <div class="card-body">
+            <ul class="list-group">
+              <li class="list-group-item d-flex justify-content-between align-items-center" *ngFor="let eleve of eleves">
+                <img [src]="eleve.photo" alt="{{ eleve.nom }}" class="rounded-circle" width="50">
+                <span>{{ eleve.nom }} {{ eleve.prenom }}</span>
+                <span class="badge bg-primary">{{ eleve.matricule }}</span>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="row">
+      <div class="col-lg-6">
+        <div class="card shadow border-0 mb-4">
+          <div class="card-header bg-info text-white">
+            <h5>Matières</h5>
+          </div>
+          <div class="card-body">
+            <ul class="list-group">
+              <li class="list-group-item d-flex justify-content-between align-items-center" *ngFor="let matiere of matieres">
+                <i class="bi bi-book-fill"></i> {{ matiere.libelle }}
+                <span class="badge bg-secondary">{{ matiere.date_debut | date:'shortDate' }} - {{ matiere.date_fin | date:'shortDate' }}</span>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </div>
+
+      <div class="col-lg-6">
+        <div class="card shadow border-0 mb-4">
+          <div class="card-header bg-success text-white">
+            <h5>Évaluations</h5>
+          </div>
+          <div class="card-body">
+            <ul class="list-group">
+              <li class="list-group-item d-flex justify-content-between align-items-center" *ngFor="let evaluation of evaluations">
+                <i class="bi bi-pencil-fill"></i> {{ evaluation.matiere.libelle }} - {{ evaluation.valeurs }} - {{ evaluation.eleve.nom }} -{{ evaluation.eleve.prenom }}
+                <span class="badge bg-warning">{{ evaluation.date | date:'shortDate' }}</span>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+
+</div>
 <router-outlet></router-outlet>
-
-
