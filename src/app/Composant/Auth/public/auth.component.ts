@@ -43,7 +43,7 @@ export class AuthComponent {
           localStorage.setItem('token', response.authorization.token);
           console.log('Login successful:', response);
           // Rediriger vers une page de profil ou tableau de bord
-          this.router.navigate(['/profile']); // Remplacez par la route souhaitée
+          this.router.navigate(['/Dashbord-Accueil']); // Remplacez par la route souhaitée
         }
       }, error => {
         console.error('Login error:', error);
@@ -53,7 +53,7 @@ export class AuthComponent {
         if (response.status) {
           console.log('Registration successful:', response);
           // Vous pouvez rediriger vers la page de connexion ou vers un tableau de bord
-          this.router.navigate(['/auth']); // Remplacez par la route souhaitée
+          this.router.navigate(['/Dashbord-Accueil']); // Remplacez par la route souhaitée
         }
       }, error => {
         console.error('Registration error:', error);

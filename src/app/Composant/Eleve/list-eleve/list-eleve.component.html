@@ -1,0 +1,45 @@
+<div class="content">
+  <a [routerLink]="'/Dashbord-eleves/add-update'" class="btn btn-dark m-2 ">Ajouter</a>
+  <div class="card mb-4">
+    <div class="card-header bg-white">
+      <h5 class="card-title mb-0">Gestion des Étudiants</h5>
+    </div>
+    <div class="card-body">
+      <table class="table">
+        <thead>
+          <tr>
+            <th>photo</th>
+            <th>Matricule</th>
+            <th>Nom</th>
+            <th>Prénom</th>
+            <th>Email</th>
+            <th>Téléphone</th>
+            <th>Actions</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr *ngFor="let eleve of eleves"  class="">
+            <td><img src="{{ eleve.photo }}" alt="photo" class="photo"></td>
+            <td>{{ eleve.matricule }}</td>
+            <td>{{ eleve.nom }}</td>
+            <td>{{ eleve.prenom }}</td>
+            <td>{{ eleve.email }}</td>
+            <td>{{ eleve.telephone }}</td>
+            <td>
+              <!-- Affiche les actions en fonction de l'état de suppression -->
+              <button *ngIf="!eleve.deleted_at" class="btn btn-sm btn-primary m-1" [routerLink]="['/Dashbord-eleves/add-update', eleve.id]">
+                <i class="fas fa-edit"></i>
+              </button>
+              <button *ngIf="!eleve.deleted_at" class="btn btn-sm btn-danger m-1" (click)="deleteEleve(eleve.id)">
+                <i class="fas fa-trash"></i>
+              </button>
+              <button *ngIf="eleve.deleted_at" class="btn btn-sm btn-success m-1" (click)="restoreEleve(eleve.id)">
+                <i class="fas fa-undo"></i>
+              </button>
+            </td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+</div>

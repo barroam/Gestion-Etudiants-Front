@@ -1,0 +1,17 @@
+.content {
+  margin-left: 200px;
+  padding: 80px 20px;
+}
+
+.big-text {
+  font-size: 48px;
+  font-weight: bold;
+  text-align: center;
+  margin-top: 100px;
+}
+.photo{
+width: 3.5rem;
+}
+td{
+align-content: center;
+}

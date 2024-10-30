@@ -1,0 +1,69 @@
+<div class="content">
+  <form [formGroup]="eleveForm" (ngSubmit)="saveEleve()" class="container mt-4">
+    <div class="form-group">
+      <label for="matricule">Matricule</label>
+      <input id="matricule" formControlName="matricule" class="form-control" />
+      <div *ngIf="eleveForm.get('matricule')?.invalid && (eleveForm.get('matricule')?.touched || eleveForm.get('matricule')?.dirty)">
+        <small class="text-danger">{{ getErrorMessage('matricule') }}</small>
+      </div>
+    </div>
+
+    <div class="form-group">
+      <label for="nom">Nom</label>
+      <input id="nom" formControlName="nom" class="form-control" />
+      <div *ngIf="eleveForm.get('nom')?.invalid && (eleveForm.get('nom')?.touched || eleveForm.get('nom')?.dirty)">
+        <small class="text-danger">{{ getErrorMessage('nom') }}</small>
+      </div>
+    </div>
+
+    <div class="form-group">
+      <label for="prenom">Prénom</label>
+      <input id="prenom" formControlName="prenom" class="form-control" />
+      <div *ngIf="eleveForm.get('prenom')?.invalid && (eleveForm.get('prenom')?.touched || eleveForm.get('prenom')?.dirty)">
+        <small class="text-danger">{{ getErrorMessage('prenom') }}</small>
+      </div>
+    </div>
+
+    <div class="form-group">
+      <label for="adresse">Adresse</label>
+      <input id="adresse" formControlName="adresse" class="form-control" />
+      <div *ngIf="eleveForm.get('adresse')?.invalid && (eleveForm.get('adresse')?.touched || eleveForm.get('adresse')?.dirty)">
+        <small class="text-danger">{{ getErrorMessage('adresse') }}</small>
+      </div>
+    </div>
+
+    <div class="form-group">
+      <label for="telephone">Téléphone</label>
+      <input id="telephone" formControlName="telephone" class="form-control" />
+      <div *ngIf="eleveForm.get('telephone')?.invalid && (eleveForm.get('telephone')?.touched || eleveForm.get('telephone')?.dirty)">
+        <small class="text-danger">{{ getErrorMessage('telephone') }}</small>
+      </div>
+    </div>
+
+    <div class="form-group">
+      <label for="email">Email</label>
+      <input id="email" formControlName="email" class="form-control" />
+      <div *ngIf="eleveForm.get('email')?.invalid && (eleveForm.get('email')?.touched || eleveForm.get('email')?.dirty)">
+        <small class="text-danger">{{ getErrorMessage('email') }}</small>
+      </div>
+    </div>
+
+    <div class="form-group">
+      <label for="date_naissance">Date de naissance</label>
+      <input id="date_naissance" type="date" formControlName="date_naissance" class="form-control" />
+      <div *ngIf="eleveForm.get('date_naissance')?.invalid && (eleveForm.get('date_naissance')?.touched || eleveForm.get('date_naissance')?.dirty)">
+        <small class="text-danger">{{ getErrorMessage('date_naissance') }}</small>
+      </div>
+    </div>
+
+    <div class="form-group">
+      <label for="photo">Lien de la photo</label>
+      <input id="photo" formControlName="photo" class="form-control" />
+      <div *ngIf="eleveForm.get('photo')?.invalid && (eleveForm.get('photo')?.touched || eleveForm.get('photo')?.dirty)">
+        <small class="text-danger">{{ getErrorMessage('photo') }}</small>
+      </div>
+    </div>
+
+    <button type="submit" class="btn btn-primary mt-3">Enregistrer</button>
+  </form>
+</div>

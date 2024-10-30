@@ -1,0 +1,24 @@
+<div class="sidebar">
+  <div class="logo">
+<h2 class="p-2 text-light">Mbarrodi <br> School </h2>
+  </div>
+  <div class="nav-links">
+    <a [routerLink]="'/Dashbord-Accueil'" class="nav-link active"><i class="fas fa-home"></i> Accueil</a>
+    <a [routerLink]="'/Dashbord-eleves/liste'" class="nav-link"><i class="fas fa-user-graduate"></i> Etudiants</a>
+    <a [routerLink]="'/Dashbord-matieres/liste'" class="nav-link"><i class="fas fa-book"></i> Matières</a>
+    <a [routerLink]="'/Dashbord-evaluations/liste'" class="nav-link"><i class="fas fa-clipboard"></i> Evaluations</a>
+    <a [routerLink]="'/Dashbord-ues/liste'" class="nav-link"><i class="fas fa-university"></i> UE</a>
+
+  </div>
+</div>
+<div class="top-nav">
+  <div class="search-bar">
+    <input type="text" class="form-control" placeholder="Rechercher classe, élève, prof">
+  </div>
+  <div class="avatar">
+    <img src="https://img.freepik.com/vecteurs-libre/symbole-famille-degrade_23-2149268692.jpg?ga=GA1.1.1362668534.1728756536&semt=ais_siglip" alt="Avatar" width="40" height="40">
+  </div>
+</div>
+
+<router-outlet></router-outlet>
+
