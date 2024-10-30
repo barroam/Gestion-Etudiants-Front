@@ -1,1 +1,35 @@
-<p>list-matiere works!</p>
+<div class="content">
+  <a [routerLink]="'/Dashbord-matieres/add-update'" class="btn btn-dark m-2 ">Ajouter</a>
+<div class="card m-2">
+  <div class="card-header bg-white">
+    <h5 class="card-title mb-0">Gestions des Unites d'enseignements</h5>
+  </div>
+  <div class="card-body">
+    <table class="table">
+      <thead>
+        <tr>
+          <th>Libellé</th>
+          <th>Date Début</th>
+          <th>Date Fin</th>
+          <th>Actions</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let matiere of matieres">
+          <td>{{ matiere.libelle }}</td>
+          <td>{{ matiere.date_debut | date }}</td>
+          <td>{{ matiere.date_fin | date }}</td>
+          <td>
+            <button class="btn btn-sm btn-primary m-1" [routerLink]="['/Dashbord-matieres/add-update', matiere.id]">
+              <i class="fas fa-edit"></i>
+            </button>
+            <button class="btn btn-sm btn-danger m-1" (click)="deleteMatiere(matiere.id)">
+              <i class="fas fa-trash"></i>
+            </button>
+          </td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+</div>
+</div>

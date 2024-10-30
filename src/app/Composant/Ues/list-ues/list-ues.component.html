@@ -1,1 +1,37 @@
-<p>list-ues works!</p>
+<div class="content">
+  <!-- ue-list.component.html -->
+  <a [routerLink]="['/Dashbord-ues/add-update/']" class="btn btn-dark m-2">Ajouter une UE</a>
+  <div class="card m-2">
+    <div class="card-header bg-white">
+      <h5 class="card-title mb-0">Liste des Matières</h5>
+    </div>
+  <div class="card-body">
+  <table class="table ">
+    <thead>
+      <tr>
+        <th>ID</th>
+        <th>Libellé</th>
+        <th>Coefficient</th>
+        <th>Date Début</th>
+        <th>Date Fin</th>
+        <th>Actions</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let ue of ues">
+        <td>{{ ue.id }}</td>
+        <td>{{ ue.libelle }}</td>
+        <td>{{ ue.coef }}</td>
+        <td>{{ ue.date_debut }}</td>
+        <td>{{ ue.date_fin }}</td>
+        <td>
+          <a [routerLink]="['/Dashbord-ues/add-update/', ue.id]" class="btn btn-sm btn-primary m-1">    <i class="fas fa-edit"></i></a>
+          <button (click)="deleteUe(ue.id)" class="btn btn-sm btn-danger m-1">   <i class="fas fa-trash"></i></button>
+        </td>
+      </tr>
+    </tbody>
+  </table>
+  </div>
+</div>
+
+</div>
